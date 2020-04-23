@@ -57,7 +57,7 @@ public class MyOrdersDAOImpl implements IMyOrdersDAO {
 	@Override
 	public ArrayList<MyOrders> allMyOrder(Customer cust){
 		try {
-			ArrayList<MyOrders> orderlist = (ArrayList<Myorders>)sessionfactory.getCurrentSession().createCriteria(MyOrders.class)
+			ArrayList<MyOrders> orderlist = (ArrayList<MyOrders>) sessionfactory.getCurrentSession().createCriteria(MyOrders.class)
 					.add(Restrictions.eq("cus_Detail", cust)).list();
 			return orderlist;
 			

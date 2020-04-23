@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Cart {
@@ -13,10 +14,10 @@ public class Cart {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int cart_id;
 	
-	@Column(nullable=false)
+	@ManyToOne
 	Customer cust_details;
 	
-	@Column(nullable=false)
+	@ManyToOne
 	Product pro_details;
 	
 	@Column(nullable=false)
