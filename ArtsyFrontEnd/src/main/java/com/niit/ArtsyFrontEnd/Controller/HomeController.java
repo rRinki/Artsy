@@ -13,7 +13,7 @@ public class HomeController {
 
 	
 
-		@RequestMapping(value= {"/","/home"})
+		@RequestMapping(value= {"/","/Home"})
 		String IndexPage(Model model) {
 			
 			model.addAttribute("indexpage",true);

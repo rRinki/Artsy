@@ -4,24 +4,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
-   .bg-dark{
-        background-color: transparent!important;
-        background-image:linear-gradient(rgba(230, 15, 68, 0.842),rgb(10, 0, 0));
+  .bg-dark{
+        xbackground-color: transparent!important;
+       
+        background-image:linear-gradient(rgba(247, 16, 16, 0.712),rgb(12, 11, 11));
        
     }
-    ul>li>a{
-        border-right:1px dotted white;
+   .ul>li>a{
+      border-right:1px dotted white;
         display: inline-block;
         
+        
     }
+
+
+
     
     
   </style>
-
+    
+ 
 <nav class=" navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <div class="row">
-        <div class="col-4 text-center"></div>
-    <a class="navbar-brand text-center" href="#">Artsy</a>
+        <div class="col-3 text-center"></div>
+    <a class="navbar-brand text-center" href="#">ARTsy -Color your creativity</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,25 +35,33 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
        
-            <div class="col-8"></div>
+            <div class="col-6"></div>
             <div class="col text center"> 
                                 <ul class="navbar-nav pull-right">
                                     <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                              
+                                    <a class="nav-link" href="Home">HOME</a>
                                     </li>
                                     <li class="nav-item active">
-                                    <a class="nav-link" href="AboutUS">About Us</a>
+                                    <a class="nav-link" href="Category">CATEGORY</a>
                                     </li>
+                                    
                                     <li class="nav-item">
-                                    <a class="nav-link active" href="ContactUS">Contact Us</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="Login">Login</a>
+                                    <a class="nav-link active" href="ContactUS">CONTACT US</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="Register">Register</a>
+                                    <a class="nav-link" href="AboutUS">ABOUT US</a>
                                     </li>
-                                </ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="Login">LOGIN</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="Register">REGISTER</a>
+                                    </li>
+                                    </ul>
+                       
         </div>
     </div>
   </nav>
+  
+

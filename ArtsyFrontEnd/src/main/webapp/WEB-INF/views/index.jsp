@@ -12,11 +12,14 @@
 <title>${title}</title>
 </head>
 <body>
+
 	<jsp:include page="Navbar.jsp"></jsp:include>
 	
 	
 	<div style="min-height: 500px;">
-		
+		<c:if test="${indexpage}">
+			<jsp:include page="Home.jsp"></jsp:include>
+		</c:if>
 		<c:if test="${contactus}">
 			<jsp:include page="ContactUS.jsp"></jsp:include>
 		</c:if>
@@ -28,6 +31,9 @@
 		</c:if>
 		<c:if test="${registerpage}">
 			<jsp:include page="Register.jsp"></jsp:include>
+		</c:if>
+		<c:if test="${productpage}">
+			<jsp:include page="Product.jsp"></jsp:include>
 		</c:if>
 		
 		<c:if test="${categorypage}">
