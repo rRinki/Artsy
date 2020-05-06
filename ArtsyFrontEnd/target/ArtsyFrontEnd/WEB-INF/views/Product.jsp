@@ -60,7 +60,7 @@
 				<c:if test="${!edit}">
 					<c:set var="url" value="addproducts"></c:set>
 				</c:if>
-				<form:form action="${url}" method="post" modelAttribute="productobject">
+				<form:form action="${url}" method="post" modelAttribute="productobject" enctype="multipart/form-data">
 
 					<c:if test="${edit}">
 						<form:hidden id="product_id" placeholder="Product Id" name="product_id" path="pro_id" />
@@ -110,11 +110,14 @@
 					<div class="form-group">
 						<form:select id="cat_Name" class="form-control"
 							placeholder="Category Name" path="pro_Category.cat_Id">
+						
 
 							<c:forEach items="${catlist}" var="c">
 								<option value="${c.cat_Id}">${c.cat_Name}</option>
 							</c:forEach>
 						</form:select>
+						
+						<form:input type ="file" path ="pro_images"/>
 						
 						<br>
 					</div>
@@ -139,6 +142,7 @@
 							<th>Product Stock</th>
 							<th>Product Price</th>
 							<th>Product Category</th>
+							<th>Images</th>
 							<th>Edit/Delete</th>
 
 						</tr>
@@ -153,6 +157,7 @@
 								<td>${p.pro_stock}</td>
 								<td>${p.pro_price}</td>
 								<td>${p.pro_Category.cat_Name}</td>
+								<td><img src="/pimg/${p.pro_id}.jpeg" height="50px"></td>
 								<td class="text-center">
 									<div class="row">
 										<div class="col-6">

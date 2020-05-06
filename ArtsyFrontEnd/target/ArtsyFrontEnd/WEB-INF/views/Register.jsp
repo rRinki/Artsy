@@ -48,27 +48,31 @@
         <h3 class="text-center">Access our products with a free account</h3>
         <h5 class="text-center">Sign up to see more</h5>
         <br>
+        
         <c:if test="${success}">
 				<div class="alert alert-success">
 					<strong>Success!</strong>Customer Added.
+					<h3>${message}</h3>
 				</div>
 			</c:if>
 			<c:if test="${error1}">
 				<div class="alert alert-danger">
 					<strong>Danger!</strong>Check the data again.
+					<h3>${message}</h3>
 				</div>
 			</c:if>
 
 			<c:if test="${error2}">
 				<div class="alert alert-warning">
 					<strong>Warning!</strong>Customer Already Exists.
+					<h3>${message}</h3>
 				</div>
 			</c:if>
 			
-			
-
-     
+		
           <div class="container" >
+          <form:form action="addcustomer" method="post" modelAttribute="customerobject">
+          
          <div class="form-group col-md-12">
             <form:input type="text" class="form-control" placeholder="Name**" path="cus_Name"/>
             <form:errors path="cus_Name" cssStyle="color:Red"></form:errors>
@@ -95,6 +99,7 @@
             
             
         </div>
+        </form:form>
     </div>
 
 </div>
