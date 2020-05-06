@@ -9,9 +9,14 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+@Configuration
+@EnableTransactionManagement
+@ComponentScan(basePackages="com.niit")
 public class DBConfig {
 	@Bean
 	public DataSource myDataSource() {
@@ -26,20 +31,20 @@ public class DBConfig {
 	
 	Properties myDBProperties() {
 		Properties properties = new Properties();
-		properties.setProperty(Environment.DIALECT, "org.hibernate.dialect.H2Dialect");
+		properties.setProperty(Environment.DIALECT,"org.hibernate.dialect.H2Dialect");
 		properties.setProperty(Environment.HBM2DDL_AUTO, "update");
 		properties.setProperty(Environment.SHOW_SQL, "true");
 		return properties;
 	}
 
-	@Bean(name = "sessionfactory")
-	SessionFactory mySessionFactory() {
+	@Bean(name ="sessionfactory")
+	LocalSessionFactoryBean mySessionFactory() {
 		LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
 		localSessionFactoryBean.setDataSource(myDataSource());
 		localSessionFactoryBean.setHibernateProperties(myDBProperties());
 		localSessionFactoryBean.setPackagesToScan("com.niit.ArtsyBackEnd.Model");
 
-		return (SessionFactory) localSessionFactoryBean;
+		return localSessionFactoryBean;
 	}
 	
 	@Autowired

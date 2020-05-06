@@ -5,6 +5,11 @@ package com.niit.ArtsyBackEnd.Model;
 	import javax.persistence.GenerationType;
 	import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 
 	@Entity
 	public class Customer 
@@ -14,12 +19,17 @@ import javax.persistence.Transient;
 		int cus_Id;
 		
 		@Column(nullable=false,unique=true)
+		@NotBlank(message="Customer Name cannot be blank")
+		@Length(min=3,message="Minimum number of characters is 3")
 		String cus_Name;
 		
 		@Column(nullable=false,unique=true)
+		@Email()
 		String cus_Email;
 		
 		@Column(nullable=false)
+		@Pattern(regexp = "/^[0-9]\\d{2,4}-\\d{6,8}$/",message="Please enter the valid phone number")
+		
 		String cus_Phone;
 		
 		@Transient

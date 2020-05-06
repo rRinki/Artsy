@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Product {
 	
@@ -14,6 +16,7 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	int pro_id;
 	
+	@NotBlank(message="ProductName cannot be blank")
 	@Column(nullable=false,unique=true)
 	String pro_name;
 	

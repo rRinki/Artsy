@@ -1,10 +1,11 @@
 package com.niit.ArtsyBackEnd.Model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -14,13 +15,13 @@ public class MyOrders {
 	@Id
 	String order_Id;
 	
-	@Column(nullable=false)
+	@ManyToOne
 	Product pro_Detail;
 	
-	@Column(nullable=false)
+	@ManyToOne
 	Customer cus_Detail;
 	
-	@Column(nullable=false)
+	@ManyToOne
 	Address address;
 	
 	@Column(nullable=false)
