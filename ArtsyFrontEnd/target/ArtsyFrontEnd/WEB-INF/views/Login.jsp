@@ -76,18 +76,18 @@
           <hr>
   <form class="form-horizontal" style="margin-left:50px;margin-right:50px;" >
        <div class="form-group input-group">
-           <span class="input-group-addon" >
-           <span class="glyphicon glyphicon-lock"></span>
-              </span>
+           <div class="input-group-prepend" >
+            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+              </div>
           <input type="email" class="form-control" name="email" placeholder="Enter Email..." required>
            </div>
 
                         
                           
   <div class="form-group input-group">
-     <span class="input-group-addon">
-      <span class="glyphicon glyphicon-lock"></span>
-       </span>
+     <div class="input-group-prepend">
+       <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+       </div>
             <input type="password" class="form-control" name="password" placeholder="Enter Password..."required>
            </div>
                           

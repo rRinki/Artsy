@@ -28,7 +28,7 @@
 
 
 
-	<div class="container" style="">
+	<div class="container">
 		<div class="col-6"
 			style="width: 600px; margin-left: 250px; margin-top: 50px;">
 
@@ -36,18 +36,18 @@
 
 			<c:if test="${success}">
 				<div class="alert alert-success">
-					<strong>Success!</strong>Data Inserted.
+					<strong>Success!</strong>${message}
 				</div>
 			</c:if>
 			<c:if test="${error1}">
 				<div class="alert alert-danger">
-					<strong>Danger!</strong>Incorrect Data.
+					<strong>Danger!</strong>${message}
 				</div>
 			</c:if>
 
 			<c:if test="${error2}">
 				<div class="alert alert-warning">
-					<strong>Warning!</strong>Data Already Exists.
+					<strong>Warning!</strong>${message}
 				</div>
 			</c:if>
 
@@ -77,6 +77,8 @@
 					<form:input type="text" class="form-control"
 						placeholder="Category Name" path="cat_Name" />
 					<form:errors path="cat_Name" cssStyle="color:Red"></form:errors>
+					
+				
 					<input type="submit" class="btn btn-dark btn-block" value="Submit">
 					
 
@@ -88,7 +90,7 @@
 	</div>
 
 	<!-- --To fetch The Data -->
-	<div class="row" style="margin-bottom: 3%;">
+	<div class="row" style="margin-bottom: 3%;padding:8%">
 		<div class="table-responsive table-bordered movie-table">
 			<table class="table movie-table">
 				<thead class="dark-row">
@@ -104,7 +106,6 @@
 						<tr>
 							<td>${c.cat_Id}</td>
 							<td>${c.cat_Name}</td>
-
 							<td class="text-center">
 								<div class="row">
 									<div class="col-6">

@@ -1,5 +1,9 @@
 package com.niit.ArtsyFrontEnd.Controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.ArtsyBackEnd.DAO.ICategoryDAO;
 import com.niit.ArtsyBackEnd.Model.Category;
@@ -50,6 +55,7 @@ public class CategoryController {
 			{
 				if(categorydao.addCategory(category))
 				{
+					
 					model.addAttribute("success", true);
 					model.addAttribute("message", "Category Added");
 					System.out.println("Done");
@@ -79,6 +85,9 @@ public class CategoryController {
 		model.addAttribute("title","Artsy--Category");
 		return "index";
 	}
+	
+	
+
 	@RequestMapping("/deletecategory")
 	String deleteCategory(@RequestParam("catname")String cat_Name,Model model)
 	{

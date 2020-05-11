@@ -33,24 +33,6 @@
 	margin: 0 0 35px;
 }
 
-a:hover, a:active {
-	color: #ffb901;
-	text-decoration: none;
-	outline: 0;
-}
-
-.aboutus-more {
-	border: 1px solid #fdb801;
-	border-radius: 25px;
-	color: #fdb801;
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 700;
-	letter-spacing: 0;
-	padding: 7px 20px;
-	text-transform: uppercase;
-}
-
 }
 </style>
 

@@ -32,6 +32,9 @@
 
 	<mvc:resources location="/resources/productimages/"
 		mapping="/pimg/*" />
+		
+		<mvc:resources location="/resources/categoryimages/"
+		mapping="/cimg/*" />
 
 </beans>
 

@@ -1,7 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +17,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="img/sketching.jpg" alt="First slide">
+        <img class="d-block w-100" src="img/4.jpg" alt="First slide">
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="img/Colourpencil.jpg" alt="Second slide">
@@ -45,3 +47,7 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <script>
+ 
+
+</script>

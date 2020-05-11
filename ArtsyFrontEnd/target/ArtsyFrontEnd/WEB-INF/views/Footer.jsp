@@ -4,6 +4,11 @@
 	@import
 		url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
 		;
+		
+		
+	.container{
+	position:fixed:
+	}
 	
 	section {
 		padding: 0;
@@ -17,7 +22,7 @@
 	}
 	
 	#footer {
-		background:linear-gradient(rgb(8, 8, 8),rgba(153, 141, 141, 0.966));
+		background:rgba(26, 25, 80, 0.6);
 		width:100%;
 	}
 	

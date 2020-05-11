@@ -41,7 +41,7 @@
                
                
        <div class="col-md-4 mx-auto">
-       page<div class="jumbotron" style="margin-top:5%;" >
+       <div class="jumbotron" style="margin-top:5%;" >
             
       
         
@@ -51,21 +51,21 @@
         
         <c:if test="${success}">
 				<div class="alert alert-success">
-					<strong>Success!</strong>Customer Added.
-					<h3>${message}</h3>
+					<strong>Success!</strong><h3>${message}</h3>
+					
 				</div>
 			</c:if>
 			<c:if test="${error1}">
 				<div class="alert alert-danger">
-					<strong>Danger!</strong>Check the data again.
-					<h3>${message}</h3>
+					<strong>Danger!</strong><h3>${message}</h3>
+				
 				</div>
 			</c:if>
 
 			<c:if test="${error2}">
 				<div class="alert alert-warning">
-					<strong>Warning!</strong>Customer Already Exists.
-					<h3>${message}</h3>
+					<strong>Warning!</strong><h3>${message}</h3>
+				
 				</div>
 			</c:if>
 			
@@ -74,7 +74,7 @@
           <form:form action="addcustomer" method="post" modelAttribute="customerobject">
           
          <div class="form-group col-md-12">
-            <form:input type="text" class="form-control" placeholder="Name**" path="cus_Name"/>
+            <form:input type="text" class="form-control" placeholder="Name**" path="cus_Name"/> 
             <form:errors path="cus_Name" cssStyle="color:Red"></form:errors>
         </div>
 

@@ -24,11 +24,6 @@ public class UserController {
 	{
 		model.addAttribute("registerpage",true);
 		model.addAttribute("customerobject",new Customer());
-		model.addAttribute("edit", false);
-		model.addAttribute("success", false);
-		model.addAttribute("error1", false);
-		model.addAttribute("error2", false);
-		model.addAttribute("message", "");
 		model.addAttribute("title","Register");
 		return "index";
 		
@@ -78,13 +73,9 @@ public class UserController {
 			
 		}
 		
-		model.addAttribute("edit", false);
-		model.addAttribute("registerpage",true);
-		model.addAttribute("error1", false);
-		model.addAttribute("success", false);
-		model.addAttribute("error2", false);
-		model.addAttribute("message", "");
+	
 		model.addAttribute("customerobject",new Customer());
+		model.addAttribute("registerpage",true);
 		model.addAttribute("title","Register");
 		return "index";
 			}

@@ -157,7 +157,7 @@
 								<td>${p.pro_stock}</td>
 								<td>${p.pro_price}</td>
 								<td>${p.pro_Category.cat_Name}</td>
-								<td><img src="/pimg/${p.pro_id}.jpeg" height="50px"></td>
+								<td><img src="pimg/${p.pro_id}.jpg" height="50px"></td>
 								<td class="text-center">
 									<div class="row">
 										<div class="col-6">

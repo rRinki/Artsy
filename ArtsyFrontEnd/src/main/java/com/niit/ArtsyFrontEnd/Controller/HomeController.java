@@ -2,14 +2,20 @@ package com.niit.ArtsyFrontEnd.Controller;
 
 
 import org.springframework.ui.Model;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.ArtsyBackEnd.DAO.IProductDAO;
+import com.niit.ArtsyBackEnd.DAO.ProductDAOImpl;
 import com.niit.ArtsyBackEnd.Model.Category;
 
 @Controller
 public class HomeController {
+	
+	@Autowired
+	IProductDAO productdao;
 
 	
 
@@ -47,5 +53,21 @@ public class HomeController {
 			return "index";
 		}
 		
+		@RequestMapping("/allproducts")
+		String DisplayData(Model model)
+		{
+			model.addAttribute("productlist", productdao.allProduct());
+			model.addAttribute("cust_productpage", true);
+			 return "index";
+		}
+	
+		@RequestMapping("/oneproduct")
+		String DisplayProductDetails(Model model,@RequestParam("pro_id")int pro_id)
+		{
+			model.addAttribute("product",productdao.oneProduct(pro_id));
+			model.addAttribute("one_productpage", true);
+			model.addAttribute("title", "Artsy-Products");
+			 return "index";
 		
-	}
+		}
+		}

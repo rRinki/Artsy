@@ -30,8 +30,11 @@
 		<property name="maxUploadSize" value="10000000" />
 	</bean>
 
-	<mvc:resources location="/resources/product_images/"
+	<mvc:resources location="/resources/productimages/"
 		mapping="/pimg/*" />
+		
+		<mvc:resources location="/resources/categoryimages/"
+		mapping="/cimg/*" />
 
 </beans>
 

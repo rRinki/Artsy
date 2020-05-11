@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security.xsd">
+	
+	<!-- now i have to create a intercept because only if i have a intercept 
+		my security will work auto-config=true is given to configure my authentication 
+		manager -->
+	<security:http auto-config="true">
+	
+		<security:intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />
+		<!-- pattern say the url type to  restrict
+		access say for whome should i restrict -->
+	
+		<!-- the page got intercepted but now you need to specify where it should 
+			be redirected on interception
+			 -->
+		<!-- <security:http-basic/> will also generate a form but 
+		this will be a pop up form -->
+		<security:form-login />
+		<!-- this line will call the login form given by spring/userdefined form
+		this come as a seperate html page -->
+	</security:http>
+	
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="mythreye" password="india"
+					authorities="ROLE_ADMIN" />
+				<security:user name="sangeetha" password="niit"
+					authorities="ROLE_CUSTOMER" />
+			</security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+</beans>
