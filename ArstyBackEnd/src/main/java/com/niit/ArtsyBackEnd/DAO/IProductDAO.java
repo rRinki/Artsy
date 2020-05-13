@@ -11,7 +11,7 @@ public interface IProductDAO {
 	public boolean updateProduct(Product product);
 	public boolean deleteProduct(Product product);
 	public ArrayList<Product> allProduct();
-	public Product oneProduct(int prodid);
+	public Product oneProduct(int pro_id);
 	public ArrayList<Product>allProductByCategory(Category category);
 
 }

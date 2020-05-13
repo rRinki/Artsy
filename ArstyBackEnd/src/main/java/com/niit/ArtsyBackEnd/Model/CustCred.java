@@ -14,10 +14,10 @@ public class CustCred {
 	@Column(nullable=false)
 	String cust_Password;
 	
-	@Column(nullable=false,unique=true)
+	@Column(nullable=false)
 	String cust_Role;
 	
-	@Column(nullable=false,unique=true)
+	@Column(nullable=false)
 	String cust_Status;
 
 	public String getCust_Email() {

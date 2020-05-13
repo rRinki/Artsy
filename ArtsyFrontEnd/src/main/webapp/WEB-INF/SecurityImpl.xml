@@ -29,7 +29,9 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		this will be a pop up form -->
 		
 		<security:form-login login-page="/Login" username-parameter="username" password-parameter="password"
-		login-processing-url="/perform_Login" default-target-url="/" authentication-failure-forward-url="/Login?error=true"/>
+		login-processing-url="/perform_Login" default-target-url="/" authentication-failure-forward-url="/Login?error=true" 
+		authentication-success-forward-url="/loginsuccess"/>
+		<security:logout invalidate-session="true" logout-url ="/logout"/>
 		<security:csrf disabled="true"/>
 		
 		<!-- this line will call the login form given by spring/userdefined form

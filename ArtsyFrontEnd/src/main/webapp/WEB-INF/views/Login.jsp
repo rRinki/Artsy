@@ -69,7 +69,7 @@
  <div class="container">
    <div class ="row">
     <div class="col-6" style="width:600px;margin-left:250px;margin-top:50px;">
-       <div class="conatiner jump">
+       <div class="container jump">
         <div class="form-group">
            <h2 style="text-align: center">LOGIN</h2></div>
            <c:if test="${success}">

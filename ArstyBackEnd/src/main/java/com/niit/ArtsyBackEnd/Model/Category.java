@@ -5,10 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Category {
@@ -22,6 +24,7 @@ public class Category {
 	@Size(min=3,message="Minimum number of characters is 3")
 	@Length(min=3,message="Minimum number of characters is 3")
 	String cat_Name;
+	
 
 	public int getCat_Id() {
 		return cat_Id;

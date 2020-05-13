@@ -67,11 +67,11 @@ public class ProductDAOImpl implements IProductDAO {
 	}
 
 	@Override
-	public Product oneProduct(int prodid) {
+	public Product oneProduct(int pro_id) {
 		try
 	     {
 	      Product  product= (Product)sessionfactory.getCurrentSession().createCriteria (Product.class).
-	    		  add(Restrictions.eq("pro_id",prodid)).uniqueResult();
+	    		  add(Restrictions.eq("pro_id",pro_id)).uniqueResult();
 	      System.out.println(product.getPro_name());
 	      return product;
 	     }

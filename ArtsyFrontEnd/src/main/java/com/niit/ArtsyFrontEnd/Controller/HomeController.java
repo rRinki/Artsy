@@ -50,15 +50,12 @@ public class HomeController {
 		{
 			if(error) {
 				model.addAttribute("error1", true);
-				model.addAttribute("success", false);
-				model.addAttribute("error2", false);
 				model.addAttribute("message", "Email or Password Incorrect");
 			}
 			else
 			{
 				model.addAttribute("error1", false);
-				model.addAttribute("success", false);
-				model.addAttribute("error2", false);
+				model.addAttribute("message", "");
 			}
 			model.addAttribute("loginpage",true);
 			model.addAttribute("title","Login");
