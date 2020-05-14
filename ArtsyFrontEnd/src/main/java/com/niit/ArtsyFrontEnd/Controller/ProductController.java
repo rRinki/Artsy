@@ -65,7 +65,7 @@ public class ProductController {
 					model.addAttribute("productobject", new Product());
 					model.addAttribute("error1", false);
 					model.addAttribute("success", true);
-					model.addAttribute("message", "Added");
+					model.addAttribute("message", "Product Added Successfully");
 					model.addAttribute("error2", false);
 					System.out.println("Done");
 				} else {
@@ -73,7 +73,7 @@ public class ProductController {
 					model.addAttribute("error1", false);
 					model.addAttribute("error2", true);
 					model.addAttribute("success", false);
-					model.addAttribute("message", "checkData");
+					model.addAttribute("message", "Product Already Added!!");
 					System.out.println("Failure");
 				}
 			}
@@ -83,7 +83,7 @@ public class ProductController {
 			model.addAttribute("error1", false);
 			model.addAttribute("error2", true);
 			model.addAttribute("success", false);
-			model.addAttribute("message", "checkData");
+			model.addAttribute("message", "Product Already Added!!");
 			System.out.println("Failure");
 
 		}

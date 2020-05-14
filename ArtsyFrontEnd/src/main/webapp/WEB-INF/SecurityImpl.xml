@@ -40,12 +40,14 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 	
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:user-service>
+			<!--  security:user-service>
 				<security:user name="mythreye" password="india"
 					authorities="ROLE_ADMIN" />
-				<security:user name="sangeetha" password="niit"
-					authorities="ROLE_CUSTOMER" />
-			</security:user-service>
+			</security:user-service>-->
+		
+		<security:jdbc-user-service data-source-ref="myDataSource"
+		users-by-username-query="select cust_Email,cust_Password,cust_Status from CustCred where cust_Email=? "
+		authorities-by-username-query="select cust_Email,cust_Role from CustCred where cust_Email=?"/>
 		</security:authentication-provider>
 	</security:authentication-manager>
 </beans>

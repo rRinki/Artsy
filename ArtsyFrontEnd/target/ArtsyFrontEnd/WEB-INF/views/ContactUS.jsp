@@ -54,7 +54,7 @@ padding:1%;
 <div class="container">
 <div class="row">
 <div class="col-12">
-<img class="d-block w-100" src="img/Contact.jpg" >
+<img class="d-block width:20%,height:20%" src="img/Contact.jpg" >
 </div>
 </div>
 </div>

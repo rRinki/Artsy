@@ -20,63 +20,55 @@ public class UserController {
 	ICustomerDAO customerdao;
 
 	@RequestMapping("/Register")
-	String registerPage(Model model)
-	{
-		model.addAttribute("registerpage",true);
-		model.addAttribute("customerobject",new Customer());
-		model.addAttribute("title","Register");
+	String registerPage(Model model) {
+		model.addAttribute("registerpage", true);
+		model.addAttribute("customerobject", new Customer());
+		model.addAttribute("title", "Register");
 		return "index";
-		
+
 	}
 
 	@RequestMapping("/addcustomer")
-	String addregisterPage(@Valid @ModelAttribute( "customerobject")Customer customer,BindingResult br,Model model)
-	{
-		try
-		{
-			if(br.hasErrors())
-			{
+	String addregisterPage(@Valid @ModelAttribute("customerobject") Customer customer, BindingResult br, Model model) {
+		try {
+			if (br.hasErrors()) {
 				model.addAttribute("error1", true);
 				model.addAttribute("success", false);
 				model.addAttribute("error2", false);
 				model.addAttribute("message", "Please Check Again");
-				model.addAttribute("customerobject",customer);//this line will help in populating errors
+				model.addAttribute("customerobject", customer);// this line will help in populating errors
 				System.out.println("Done");
-			
-			}
-			else
-			{
-				if(customerdao.addCustomer(customer))
-				{
-				model.addAttribute("success", true);
-				model.addAttribute("error2", false);
-				model.addAttribute("error1", false);
-				model.addAttribute("message", "Customer Added");
-				System.out.println("Done");
+
+			} else {
+				if (customerdao.addCustomer(customer)) {
+					model.addAttribute("customerobject", new Customer());
+
+					model.addAttribute("success", true);
+					model.addAttribute("error2", false);
+					model.addAttribute("error1", false);
+					model.addAttribute("message", "Customer Added");
+					System.out.println("Done");
+				} else {
+					model.addAttribute("customerobject", customer);// this line will help in populating errors
+					model.addAttribute("error2", true);
+					model.addAttribute("success", false);
+					model.addAttribute("error2", false);
+					model.addAttribute("message", "Check Data");
+					System.out.println("Failure");
 				}
-		else
-		{
-			model.addAttribute("error2", true);
-			model.addAttribute("success", false);
-			model.addAttribute("error2", false);
-			model.addAttribute("message", "Check Data");
-			System.out.println("Failure");
-		}
 			}
 		}
-			
-		catch(Exception e)
-		{
+
+		catch (Exception e) {
 			model.addAttribute("error2", true);
-			model.addAttribute("message", "Check Data");
+			model.addAttribute("message", "Check Data once again");
 			System.out.println("Failure");
-			
+			model.addAttribute("customerobject", customer);// this line will help in populating errors
+
 		}
-		
-	
-		model.addAttribute("customerobject",new Customer());
-		model.addAttribute("registerpage",true);
-		model.addAttribute("title","Register");
+
+		model.addAttribute("registerpage", true);
+		model.addAttribute("title", "Register");
 		return "index";
-			}
-		}
+	}
+}

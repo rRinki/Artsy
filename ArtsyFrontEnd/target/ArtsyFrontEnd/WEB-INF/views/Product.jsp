@@ -26,8 +26,10 @@
 </head>
 
 <style>
-.table-responsive{
-width: 100%;}
+td{
+    max-width: 100px;
+    
+}
 </style>
 
 <body>
@@ -139,7 +141,7 @@ width: 100%;}
 		<!-- --To fetch The Data -->
 		<div class="row" style="margin-bottom: 3%;">
 			<div class="table-responsive table-bordered movie-table">
-				<table class="table movie-table">
+				<table class="table  movie-table">
 					<thead class="dark-row">
 						<tr class="movie-table-head">
 							<th>Product Id</th>
@@ -176,8 +178,9 @@ width: 100%;}
 											<a href="${cr}/admin/getproducttoedit?proid=${p.pro_id}"
 												class="btn btn-danger btn-xs"><span
 												class="glyphicon glyphicon-remove"></span>Edit</a>
+												</div>
 										</div>
-									</div>
+									
 								</td>
 							</tr>
 

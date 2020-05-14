@@ -47,10 +47,25 @@ li a:hover {
 	transition: .5s all ease;
 }
 
-li a:hover:not (.active ) {
-	background-color: #324;
-}
+li
+ 
+a
+:hover
+:not
+ 
+(
+.active
+ 
+)
+{
+background-color
+:
+ 
+#324
+;
 
+
+}
 li a.active {
 	xcolor: white;
 	xbackground-color: #4CAF50;
@@ -71,15 +86,15 @@ li a.active {
 		</div>
 
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-		<div class="col text center">
-		<ul class="navbar-nav pull-right">
-		
-			<c:choose>
-				<c:when test="${adminrole}">
-					
+			<div class="col text center">
+				<ul class="navbar-nav pull-right">
+
+					<c:choose>
+						<c:when test="${sessionScope.adminrole}">
 
 
-						
+
+
 							<li class="nav-item active"><a class="nav-link"
 								href="${cr}/Home">HOME</a></li>
 							<li class="nav-item active"><a class="nav-link"
@@ -90,43 +105,60 @@ li a.active {
 								href="${cr}/ContactUS">CONTACT US</a></li>
 							<li class="nav-item active"><a class="nav-link"
 								href="${cr}/AboutUS">ABOUT US</a></li>
-							<li class="nav-item active"><a
-								class="nav-link" href="/logout">LOGOUT</a>
-							</li>
+								<li class="nav-item active"><a class="nav-link"
+								href="${cr}/Home">Hi
+								${sessionScope.username}!</a></li>
+							<li class="nav-item active"><a class="nav-link"
+								href="logout">LOGOUT</a></li>
+
+
+						</c:when>
+
+						<c:when test="${userrole}">
+						
+						<li class="nav-item active"><a class="nav-link"
+								href="${cr}/Home">HOME</a></li>
+
+
+							<li class="nav-item active"><a class="nav-link"
+								href="${cr}/allproducts">PRODUCT</a></li>
+							<li class="nav-item active"><a class="nav-link "
+								href="${cr}/ContactUS">CONTACT US</a></li>
+							<li class="nav-item active"><a class="nav-link"
+								href="${cr}/AboutUS">ABOUT US</a></li>
 							
+							<li class="nav-item active"><a class="nav-link"
+								href="${cr}/Register">REGISTER</a></li>
+								<li class="nav-item active"><a class="nav-link"
+								href="${cr}/Home">Welcome
+								${sessionScope.username}!</a></li>
+								
+								<li class="nav-item active"><a class="nav-link" href="${cr}/logout">LOGOUT</a></li>
 						
-				</c:when>
-				
-				<c:when test="${userrole}">
-				</c:when>
-				
-                                   <c:otherwise>
+						
+						</c:when>
 
+						<c:otherwise>
 
 									<li class="nav-item active"><a class="nav-link"
-										href="${cr}/Home">HOME</a></li>
-
-
-									<li class="nav-item active"><a class="nav-link"
-										href="${cr}/allproducts">PRODUCT</a></li>
-									<li class="nav-item active"><a class="nav-link "
-										href="${cr}/ContactUS">CONTACT US</a></li>
-									<li class="nav-item active"><a class="nav-link"
-										href="${cr}/AboutUS">ABOUT US</a></li>
-									<li class="nav-item active"><a class="nav-link"
-										href="Login">LOGIN</a></li>
+								href="${cr}/Home">HOME</a></li>	
+							<li class="nav-item active"><a class="nav-link "
+								href="${cr}/ContactUS">CONTACT US</a></li>
+							<li class="nav-item active"><a class="nav-link"
+								href="${cr}/AboutUS">ABOUT US</a></li>
+							<li class="nav-item active"><a class="nav-link"
+								href="Login">LOGIN</a></li>
+								<li class="nav-item active"><a class="nav-link"
+								href="${cr}/Register">REGISTER</a></li>
 									
+							
+						</c:otherwise>		
+						</c:choose>
+				</ul>
+			</div>
 
-									<li class="nav-item active"><a class="nav-link"
-										href="${cr}/Register">REGISTER</a></li>
-										</c:otherwise>
-										
-							</c:choose>
-							</ul>
-						</div>
-						
-						
-					</div>
+
+		</div>
 	</nav>
 </nav>
 

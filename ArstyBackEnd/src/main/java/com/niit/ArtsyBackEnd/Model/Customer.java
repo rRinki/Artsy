@@ -28,7 +28,7 @@ import org.hibernate.validator.constraints.NotBlank;
 		String cus_Email;
 		
 		@Column(nullable=false)
-		@Pattern(regexp = "/^[0-9]\\d{2,4}-\\d{6,8}$/",message="Please enter the valid phone number")
+		@Pattern(regexp = "^(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[6-9]\\d{9}$", message="Mobile no. must be of Indian Standards {+91}-9000000001")
 		
 		String cus_Phone;
 		

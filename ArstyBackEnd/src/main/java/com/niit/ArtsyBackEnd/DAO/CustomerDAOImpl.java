@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.niit.ArtsyBackEnd.Model.CustCred;
 import com.niit.ArtsyBackEnd.Model.Customer;
 
 
@@ -19,7 +20,14 @@ public class CustomerDAOImpl implements ICustomerDAO {
 	@Override
 	public boolean addCustomer(Customer customer) {
 		try {
+			
 			sessionfactory.getCurrentSession().save(customer);
+			CustCred cred =new CustCred();
+			cred.setCust_Email(customer.getCus_Email());
+			cred.setCust_Password(customer.getCust_Password());
+			cred.setCust_Status("false");
+			cred.setCust_Role("ROLE_CUSTOMER");
+			sessionfactory.getCurrentSession().save(cred);
 			return true;
 		}
 		catch(Exception e) {

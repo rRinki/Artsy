@@ -66,28 +66,29 @@
                 </div>
             </div>-->
 
- <div class="container">
+
+ <div class="container my-div">
    <div class ="row">
     <div class="col-6" style="width:600px;margin-left:250px;margin-top:50px;">
-       <div class="conatiner jump">
+       <div class="container jump">
         <div class="form-group">
            <h2 style="text-align: center">LOGIN</h2></div>
            <c:if test="${success}">
 				<div class="alert alert-success">
-					<strong>Success!</strong><h3>${message}</h3>
+					<strong>Success!</strong><h6>${message}</h6>
 					
 				</div>
 			</c:if>
 			<c:if test="${error1}">
 				<div class="alert alert-danger">
-					<strong>Danger!</strong><h3>${message}</h3>
+					<strong>Danger!</strong><h6>${message}</h6>
 				
 				</div>
 			</c:if>
 
 			<c:if test="${error2}">
 				<div class="alert alert-warning">
-					<strong>Warning!</strong><h3>${message}</h3>
+					<strong>Warning!</strong><h6>${message}</h6>
 				
 				</div>
 			</c:if>
@@ -118,7 +119,8 @@
                            </div>
          
          <div class="form-group">
-          <button class="btn btn-primary">Login</button>
+          <button class="btn btn-primary">Login</button> 
+          <button class="btn btn-danger">CANCEL</button>
           </div>
 
           <div class="form-group">
@@ -131,6 +133,7 @@
             </div>
           </div>
         </div>
+
 
            
             

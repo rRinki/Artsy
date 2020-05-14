@@ -51,20 +51,20 @@
         
         <c:if test="${success}">
 				<div class="alert alert-success">
-					<strong>Success!</strong><h3>${message}</h3>
+					<strong>Success!</strong><h6>${message}</h6>
 					
 				</div>
 			</c:if>
 			<c:if test="${error1}">
 				<div class="alert alert-danger">
-					<strong>Danger!</strong><h3>${message}</h3>
+					<strong>Danger!</strong><h6>${message}</h6>
 				
 				</div>
 			</c:if>
 
 			<c:if test="${error2}">
 				<div class="alert alert-warning">
-					<strong>Warning!</strong><h3>${message}</h3>
+					<strong>Warning!</strong><h6>${message}</h6>
 				
 				</div>
 			</c:if>
