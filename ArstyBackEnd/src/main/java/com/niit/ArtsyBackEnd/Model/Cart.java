@@ -21,7 +21,7 @@ public class Cart {
 	Product pro_details;
 	
 	@Column(nullable=false)
-	int Quantity_list;
+	int pro_Quantity;
 
 	public int getCart_id() {
 		return cart_id;
@@ -47,12 +47,17 @@ public class Cart {
 		this.pro_details = pro_details;
 	}
 
-	public int getQuantity_list() {
-		return Quantity_list;
+	public int getPro_Quantity() {
+		return pro_Quantity;
 	}
 
-	public void setQuantity_list(int quantity_list) {
-		Quantity_list = quantity_list;
+	public void setPro_Quantity(int pro_Quantity) {
+		this.pro_Quantity = pro_Quantity;
 	}
 
-}
+
+	}
+
+
+
+

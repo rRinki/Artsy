@@ -51,20 +51,13 @@ padding:1%;
 
 </style>
 <body >
+<div>
+
+<img class=" w-100 h-20" style="margin-top: 5%;" src="img/callcontactus.jpg" >
 <div class="container">
-<div class="row">
-<div class="col-12">
-<img class="d-block width:20%,height:20%" src="img/Contact.jpg" >
-</div>
-</div>
-</div>
-
-	<div class="container">
-	
-		<h2 class="text-center">Get In Touch</h2>
+	<h2 class="text-center">Get In Touch</h2>
 		<hr>
-
-		<div class="row">
+<div class="row">
 			<div class="col-md-6 contact-info" style="margin-top: 10%;">
 			<div class="follow-us">
 			<b> Address </b><i class="fa fa-map-marker"></i> W-146 Auspicious corner Coimbatore
@@ -107,5 +100,6 @@ padding:1%;
 					</div>
 				</div>
 				</div>
+			</div>
 			</div>
 </body>

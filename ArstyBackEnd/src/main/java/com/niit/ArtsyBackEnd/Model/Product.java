@@ -36,6 +36,7 @@ public class Product {
 	
 	@Transient
 	MultipartFile pro_images;
+	
 
 	public MultipartFile getPro_images() {
 		return pro_images;

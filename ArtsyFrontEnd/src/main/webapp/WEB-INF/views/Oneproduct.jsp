@@ -51,11 +51,10 @@
 	float: none;
 }
 
-.body{
-
-margin-top:10%;
-padding: 10%;
-margin-botto
+.body {
+	margin-top: 10%;
+	padding: 10%;
+	margin-botto
 }
 
 .color-price-waanbii {
@@ -70,7 +69,8 @@ margin-botto
 .fa-beat {
 	animation: fa-beat 5s ease infinite;
 }
- #justpushtobottom {
+
+#justpushtobottom {
 	height: 40%;
 }
 
@@ -81,117 +81,156 @@ keyframes fa-beat { 0% {
 5%
 {
 transform
+
+
 :scale
+
+
 (1
 .25
-);
 
-  
+
+);
 }
 20%
 {
 transform
-:scale(1)
-;
 
-  
+
+:scale(1)
+
+
+;
 }
 30%
 {
 transform
-:scale(1)
-;
 
-  
+
+:scale(1)
+
+
+;
 }
 35%
 {
 transform
+
+
 :scale
+
+
 (1
 .25
-);
 
-  
+
+);
 }
 50%
 {
 transform
-:scale(1)
-;
 
-  
+
+:scale(1)
+
+
+;
 }
 55%
 {
 transform
+
+
 :scale
+
+
 (1
 .25
-);
 
-  
+
+);
 }
 70%
 {
 transform
-:scale(1)
-;
 
-  
+
+:scale(1)
+
+
+;
 }
 }
 </style>
 <body>
-<div class="container">
-	<div class="card border-0">
-		<div class="row" style="margin-top: 8%";>
-			<aside class="col-sm-4">
-				<article class="gallery-wrap">
-					<div class="img-big-wrap">
-						<div>
-							<img src="${cr}/pimg/${product.pro_id}.jpg">
+	<div class="container">
+		<div class="card border-0">
+			<div class="row" style="margin-top: 8%";>
+				<aside class="col-sm-4">
+					<article class="gallery-wrap">
+						<div class="img-big-wrap">
+							<div>
+								<img src="${cr}/pimg/${product.pro_id}.jpg">
+							</div>
 						</div>
-					</div>
-				</article>
-			</aside>
-			<aside class="col-sm-5">
-				<article class="card-body m-0 pt-0 pl-5">
-					<h3 class="title text-uppercase">${product.pro_name}</h3>
-					<div class="mb-3 mt-3">
-						<span class="h7 text-success">In stock.</span>
-					</div>
-					<div class="mb-3 mt-3">
-						<span class="price-title">Price :</span> <span
-							class="price color-price-waanbii">&#x20B9 ${product.pro_price}/-</span>
-					</div>
-					<div class="item-property">
-						<span class="price-title">Description:</span> <span>${product.pro_description}</span>
-					</div>
-				</article>
-			</aside>
+					</article>
+				</aside>
+				<aside class="col-sm-5">
+					<article class="card-body m-0 pt-0 pl-5">
+						<h3 class="title text-uppercase">${product.pro_name}</h3>
+						<div class="mb-3 mt-3">
+							<c:if test="${product.pro_stock!=0}">
+								<span class="h7 text-success"> In Stock</span>
+							</c:if>
+							<c:if test="${product.pro_stock==0}">
+								<span class="h7 text-success">Out ofStock</span>
+							</c:if>
+							<c:if test="${product.pro_stock < 5}">
+								<span class="h7 text-success"> Limited</span>
+							</c:if>
+						</div>
+						<div class="mb-3 mt-3">
+							<span class="price-title">Price :</span> <span
+								class="price color-price-waanbii">&#x20B9
+								${product.pro_price}/-</span>
+						</div>
+						<div class="item-property">
+							<span class="price-title">Description:</span> <span>${product.pro_description}</span>
+						</div>
+					</article>
+				</aside>
 				<c:if test="${product.pro_stock != 0}">
-			<aside class="col-sm-3">
-				<div class="row" style="padding-top: 50%;">
-					<a href="addToCart?pro_Id=${p.pro_id}"
-						class="btn btn-lg color-box-waanbii" type="button"> <i
-						class="fa fa-shopping-cart"></i> Add to Cart
-					</a>
-				</div>
-			</aside>
-			</c:if>
-			<c:if test="${product.pro_stock == 0}">
-			<aside class="col-sm-3">
-				<div class="row" style="padding-top: 50%;">
-					<a href=""
-						class="btn btn-lg color-box-waanbii" type="button">  Out of Stock
-					</a>
-				</div>
-			</aside>
-			</c:if>
+					<aside class="col-sm-3">
+						<form action="addtocart" method="post">
+							<div class="row">
+								<div class="col-7">
+									<div class="form-group">
+										<input type="number" class="form-control" id="quantity"
+											name="quantity" value="1"> <input type="hidden"
+											value="${product.pro_id}" id="productid"
+											name="productid">
+									</div>
+								</div>
+								<div class="col-4">
+									<button type="submit" class="btn btn-lg color-box-waanbii">
+						<i class="fa fa-shopping-cart"></i> Add to Cart</button>
 			
-			
+								</div>
+							</div>
+						</form>
+					</aside>
+				</c:if>
+				<c:if test="${product.pro_stock == 0}">
+					<aside class="col-sm-3">
+						<div class="row" style="padding-top: 50%;">
+							<a href="" class="btn btn-lg color-box-waanbii" type="button">
+								Out of Stock </a>
+						</div>
+					</aside>
+				</c:if>
+
+
+			</div>
 		</div>
 	</div>
-</div>
 </body>

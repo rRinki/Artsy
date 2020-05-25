@@ -45,10 +45,14 @@
 		<c:if test="${categorypage}">
 			<jsp:include page="Category.jsp"></jsp:include>
 		</c:if>
-		
-		<jsp:include page="Footer.jsp"></jsp:include>
-
+		<c:if test="${cartpage}">
+			<jsp:include page="viewcart.jsp"></jsp:include>
+		</c:if>
+		<c:if test="${addresspage}">
+			<jsp:include page="alladdress.jsp"></jsp:include>
+		</c:if>
 	</div>
 	
+	<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

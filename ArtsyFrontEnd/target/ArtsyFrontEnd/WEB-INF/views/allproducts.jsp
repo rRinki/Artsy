@@ -65,7 +65,7 @@ margin-top:7%;
 
 						<div class="row" style ="margin-top:2%">
 							<div class="col-6">
-              <a href=""  class="btn btn-success"><i class="fa fa-shopping-cart"></i> Add to Cart </a>
+              <a href="${cr}/addtocart?productid=${p.pro_id}"  class="btn btn-success"><i class="fa fa-shopping-cart"></i> Add to Cart </a>
             </div>
 								
 							

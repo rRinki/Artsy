@@ -29,6 +29,7 @@
             
         }
     .container{
+    	
         margin-left: auto; 
         margin-right:auto;
     }
@@ -40,8 +41,8 @@
                <div>
                
                
-       <div class="col-md-4 mx-auto">
-       <div class="jumbotron" style="margin-top:5%;" >
+       <div class="col-md-4 mx-auto"style="margin-top:8%;">
+       <div class="jumbotron"  >
             
       
         
@@ -75,30 +76,30 @@
           
          <div class="form-group col-md-12">
             <form:input type="text" class="form-control" placeholder="Name**" path="cus_Name"/> 
-            <form:errors path="cus_Name" cssStyle="color:Red"></form:errors>
+            <form:errors path="cus_Name" cssStyle="color:Black"></form:errors>
         </div>
 
         <div class="form-group col-md-12">
             <form:input type="text" class="form-control" placeholder="Your Phone**" path="cus_Phone"/>
-            <form:errors path="cus_Phone" cssStyle="color:Red"></form:errors>
+            <form:errors path="cus_Phone" cssStyle="color:Black"></form:errors>
         </div>
 
         <div class="form-group col-md-12">
             <form:input type="text" class="form-control" placeholder="Your Email**" path="cus_Email"/>
-            <form:errors path="cus_Email" cssStyle="color:Red"></form:errors>
+            <form:errors path="cus_Email" cssStyle="color:Black"></form:errors>
         </div>
 
         <div class="form-group col-md-12">
             <form:input type="text" class="form-control" placeholder="Password" path="cust_Password"/>
-            <form:errors path="cust_Password" cssStyle="color:Red"></form:errors>
+            <form:errors path="cust_Password" cssStyle="color:Black"></form:errors>
         </div>
         
         <h6 class="text-center">By clicking the Sign Up button,you agree to our Terms & Conditions and Privacy Policy</h6>
         <div class="form-group col-md-12">
-            <input type="submit" class="btn btn-dark form-control" value="Sign Up">
-            
-            
-        </div>
+            <input type="submit" class="btn btn-success form-control" value="SIGN UP"></div>
+           <div class="form-group col-md-12">
+            <input type="submit" class="btn btn-danger form-control" value="CANCEL"></div>
+           
         </form:form>
     </div>
 

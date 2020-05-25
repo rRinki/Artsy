@@ -22,18 +22,18 @@
 	}
 	
 	#footer {
-		background:rgba(26, 25, 80, 0.6);
+		background:#0d2a3a;
 		width:100%;
 	}
 	
 	#footer h5 {
 		padding-left: 10px;
 		border-left: 3px solid #eeeeee;
-		color: #ffffff;
+		color: #cccccc;
 	}
 	
 	#footer a {
-		color: #ffffff;
+		color: #cccccc;
 		text-decoration: none !important;
 		background-color: transparent;
 		-webkit-text-decoration-skip: objects;
@@ -57,7 +57,7 @@
 	}
 	
 	#footer ul.social li a, #footer ul.quick-links li a {
-		color: #ffffff;
+		color: #cccccc;
 	}
 	
 	#footer ul.social li a:hover {
@@ -110,3 +110,23 @@
 			</div>
 		</div>
 	</section>
+	
+	
+	<!-- <body>
+    
+<div class="footer pt-4">
+        <div class="container">
+            <div class="down">
+                <div class="row">
+              
+             
+               
+               
+            </div>
+            </div>
+            <hr>
+            <p class="f-b">@2019 | All Rights Reserved | Artsy </p>
+        </div>
+    
+    </div>
+</body> -->

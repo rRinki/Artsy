@@ -91,7 +91,8 @@
 	</div>
 
 	<!-- --To fetch The Data -->
-	<div class="row" style="margin-bottom: 3%;padding:8%">
+
+<div class="row" style="margin-bottom: 3%;padding:8%">
 		<div class="table-responsive table-bordered movie-table">
 			<table class="table movie-table">
 				<thead class="dark-row">
@@ -128,7 +129,8 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
+</div>
+
 </body>
 
 </html>

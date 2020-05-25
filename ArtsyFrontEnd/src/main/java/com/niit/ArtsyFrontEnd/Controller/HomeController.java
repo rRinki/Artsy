@@ -2,11 +2,16 @@ package com.niit.ArtsyFrontEnd.Controller;
 
 
 import org.springframework.ui.Model;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.ArtsyBackEnd.DAO.CartDAOImpl;
+import com.niit.ArtsyBackEnd.DAO.ICartDAO;
 import com.niit.ArtsyBackEnd.DAO.IProductDAO;
 import com.niit.ArtsyBackEnd.DAO.ProductDAOImpl;
 import com.niit.ArtsyBackEnd.Model.Category;
@@ -16,6 +21,9 @@ public class HomeController {
 	
 	@Autowired
 	IProductDAO productdao;
+	
+	@Autowired
+	ICartDAO cartdao;
 
 	
 
@@ -80,4 +88,5 @@ public class HomeController {
 			 return "index";
 		
 		}
+		
 		}

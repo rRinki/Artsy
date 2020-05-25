@@ -26,8 +26,14 @@
     body{
       background-image:url(img/Login.png);
       background-size:cover;
+      background-repeat:no repeat;
       
       
+      
+    }
+    
+    .my-div{
+    padding: 120px 0;
     }
     .jump{
       background: rgba(255, 255, 255,0.755);

@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Address {
 	
@@ -15,18 +17,23 @@ public class Address {
 	int address_Id;
 	
 	@Column(nullable=false)
+	
 	String name;
 	
 	@Column(nullable=false)
-	String Line1;
+	
+	String line1;
 	
 	@Column(nullable=false)
-	String Line2;
+	
+	String line2;
 	
 	@Column(nullable=false)
+	
 	String area;
 	
 	@Column(nullable=false)
+	
 	int pincode;
 	
 	@ManyToOne
@@ -49,19 +56,19 @@ public class Address {
 	}
 
 	public String getLine1() {
-		return Line1;
+		return line1;
 	}
 
 	public void setLine1(String line1) {
-		Line1 = line1;
+		this.line1 = line1;
 	}
 
 	public String getLine2() {
-		return Line2;
+		return line2;
 	}
 
 	public void setLine2(String line2) {
-		Line2 = line2;
+		this.line2 = line2;
 	}
 
 	public String getArea() {
@@ -87,7 +94,7 @@ public class Address {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	
+
 	
 	
 
