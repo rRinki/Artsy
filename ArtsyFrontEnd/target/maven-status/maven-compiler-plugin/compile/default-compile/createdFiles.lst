@@ -1,5 +1,6 @@
 com\niit\ArtsyFrontEnd\Controller\CartController.class
 com\niit\ArtsyFrontEnd\Controller\ProductController.class
+com\niit\ArtsyFrontEnd\Controller\OrderController.class
 com\niit\ArtsyFrontEnd\Controller\AddressController.class
 com\niit\ArtsyFrontEnd\Controller\CategoryController.class
 com\niit\ArtsyFrontEnd\Controller\LoginController.class

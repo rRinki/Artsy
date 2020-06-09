@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cr" value="${pageContext.request.contextPath}" />
 
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -12,22 +11,29 @@
 
 <style>
 body {
-	margin-top: 15%;
+	margin-top: 6%;
 }
 </style>
 <body>
 	<div class="container">
 
 		<c:if test="${empty addresslist}">
-			<div class="jumbotron">Please Add Address To Continue</div>
+			<div class="jumbotron">
+				<h4>Please Add Address To Continue</h4>
+			</div>
 		</c:if>
 		<c:if test="${not empty addresslist}">
-			<div class="row">
-			<c:if test="${info}">
-				<div class="alert alert-success">
-					<strong>Success!</strong>${message}
-				</div>
-			</c:if>
+			<div>
+				<c:if test="${info}">
+					<div class="alert alert-success">
+						<strong>${message}</strong>
+					</div>
+				</c:if>
+
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#exampleModalCenter">Add New Address</button>
+
 				<c:forEach items="${addresslist}" var="p">
 
 					<div class="col-3">
@@ -35,7 +41,7 @@ body {
 							<img src="${cr}/img/4.jpg" class="card-img-top" />
 							<div class="card-body">
 								<div class="col-12">
-									<p class="card-title" data-toggle="tooltip" title="${p.name}">${p.name}</p>
+									<h3 class="card-title" data-toggle="tooltip" title="${p.name}">${p.name}</h3>
 								</div>
 								<div class="col-12">
 									<p class="card-text">
@@ -64,38 +70,37 @@ body {
 									</p>
 								</div>
 								<div>
-								<div class="row" style="margin-top: 2%">
-									<div class="col-6">
-										<a href="${cr}/user/editaddress?addressid=${p.address_Id}"
-											class="btn btn-success" type="submit"><i
-											class="fa fa-edit"></i> Edit Address</a>
-									</div>
+									<div class="row" style="margin-top: 2%">
+										<div class="col-5">
+											<a href="${cr}/user/editaddress?addressid=${p.address_Id}"
+												class="btn btn-success" type="submit"><i
+												class="fa fa-edit"></i> Edit Address</a>
+										</div>
 
-									<div class="col-6">
-										<a href="${cr}/user/deleteaddress?addressid=${p.address_Id}"
-											class="btn btn-warning"> <i class="fa fa-trash"></i>
-											Delete Address
-										</a>
+										<div class="col-7">
+											<a href="${cr}/user/deleteaddress?addressid=${p.address_Id}"
+												class="btn btn-warning"> <i class="fa fa-trash"></i>
+												Delete Address
+											</a>
+										</div>
 									</div>
-									<div class="row" style="margin-top:2%";>
-										<a href="" class="btn btn-success"> <i class="fa fa-truck"></i>
-											Ship Here
+									<div class="row" style="margin-top: 3%";>
+										<a href="${cr}/user/placeorder?addressid=${p.address_Id}"
+											class="btn btn-danger navbar-btn" style="width: 100%"> <i
+											class="fa fa-truck"></i> Place Order
 										</a>
-									</div>
 									</div>
 								</div>
-
 							</div>
+
 						</div>
 					</div>
+
 				</c:forEach>
 			</div>
 		</c:if>
 	</div>
 
-	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary" data-toggle="modal"
-		data-target="#exampleModalCenter">Add New Address</button>
 
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModalCenter" tabindex="-1"
@@ -117,29 +122,33 @@ body {
 
 							<div class="form-group col-md-12">
 								<label>Customer Name</label> <input type="text"
-									class="form-control" placeholder="Name**" name="name" id="name" />
+									class="form-control" placeholder="Name**" name="name" id="name"
+									required="required" />
 							</div>
 
 							<div class="form-group col-md-12">
 								<label>Address Line1</label> <input type="text"
-									class="form-control" placeholder="Line1**" name="line1"  id="line1"/>
+									class="form-control" placeholder="Line1**" name="line1"
+									id="line1" required="required" />
 
 							</div>
 
 							<div class="form-group col-md-12">
 								<label>Address Line2</label> <input type="text"
-									class="form-control" placeholder="Line2**" name="line2" id="line2" />
+									class="form-control" placeholder="Line2**" name="line2"
+									id="line2" required="required" />
 
 							</div>
 
 							<div class="form-group col-md-12">
 								<label>Area</label> <input type="text" class="form-control"
-									placeholder="Area**" name="area"  id="area"/>
+									placeholder="Area**" name="area" id="area" required="required" />
 
 							</div>
 							<div class="form-group col-md-12">
 								<label>Pincode</label> <input type="text" class="form-control"
-									placeholder="Pincode**" name="pincode"  id="pincode"/>
+									placeholder="Pincode**" name="pincode" id="pincode"
+									required="required" />
 							</div>
 							<a href=""></a>
 							<button type="submit" class="btn btn-primary">Save
@@ -150,14 +159,14 @@ body {
 					</div>
 
 				</div>
-			
-			<div class="modal-footer">
-				<button type=button class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
+
+				<div class="modal-footer">
+					<button type=button class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+
 
 	<c:if test="${edit}">
 		<div class="container">
@@ -168,53 +177,43 @@ body {
 						value="${addressobject.address_Id}">
 				</div>
 
-				<div class="form-group">
-					<input type="hidden" class="form-group" id="addressid"
-						name="addressid" required="required"
-						value="${addressobject.address_Id}">
-				</div>
 
 				<div class="form-group col-md-12">
 					<label>Customer Name</label> <input type="text"
-						class="form-control" placeholder="Name**"
-						value="${addressobject.name}" />
+						class="form-control" placeholder="Name**" name="name" id="name"
+						required="required" value="${addressobject.name}" />
 				</div>
 
 				<div class="form-group col-md-12">
 					<label>Address Line1</label> <input type="text"
-						class="form-control" placeholder="Line1**"
-						value="${addressobject.line1}" />
+						class="form-control" placeholder="Line1**" name="line1" id="line1"
+						required="required" value="${addressobject.line1}" />
 
 				</div>
 
 				<div class="form-group col-md-12">
 					<label>Address Line2</label> <input type="text"
-						class="form-control" placeholder="Line2**"
-						value="${addressobject.line2}" />
+						class="form-control" placeholder="Line2**" name="line2" id="line2"
+						required="required" value="${addressobject.line2}" />
 
 				</div>
 
 				<div class="form-group col-md-12">
 					<label>Area</label> <input type="text" class="form-control"
-						placeholder="Area**" value="${addressobject.area}" />
+						placeholder="Area**" name="area" id="area" required="required"
+						value="${addressobject.area}" />
 
 				</div>
 				<div class="form-group col-md-12">
 					<label>Pincode</label> <input type="text" class="form-control"
-						placeholder="Pincode**" value="${addressobject.area}" />
+						placeholder="Pincode**" name="pincode" id="pincode"
+						required="required" value="${addressobject.pincode}" />
 
 				</div>
 				<button type="submit" class="btn btn-primary">Save changes</button>
 				<button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			</form>
-
 		</div>
-
 	</c:if>
-
-
-
-
-
 </body>
 </html>

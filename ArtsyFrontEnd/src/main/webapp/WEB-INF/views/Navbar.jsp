@@ -93,7 +93,7 @@ li a.active {
 							<li class="nav-item active"><a class="nav-link"
 								href="${cr}/Home">Hi ${sessionScope.username}!</a></li>
 							<li class="nav-item active"><a class="nav-link"
-								href="logout">LOGOUT</a></li>
+								href="/logout">LOGOUT</a></li>
 
 
 						</c:when>
@@ -112,7 +112,8 @@ li a.active {
 								href="${cr}/AboutUS">ABOUT US</a></li>
 								<li class="nav-item active"><a class="nav-link"
 								href="${cr}/user/viewCart">Cart<i class="fa fa-shopping-cart"><sup>${cartqty}</sup></i></a></li>
-
+							<li class="nav-item active"><a class="nav-link"
+								href="${cr}/user/viewallorders">My Orders<i class="fa fa-truck"></i></a></li>
 							<li class="nav-item active"><a class="nav-link"
 								href="${cr}/Register">REGISTER</a></li>
 							<li class="nav-item active"><a class="nav-link"

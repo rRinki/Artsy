@@ -1,6 +1,7 @@
 package com.niit.ArtsyFrontEnd.Controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.resource.spi.work.SecurityContext;
 import javax.servlet.http.HttpSession;
@@ -62,7 +63,15 @@ public class LoginController {
 					session.setAttribute("username", customer.getCus_Name().toUpperCase());
 					session.setAttribute("userrole",true);
 					session.setAttribute("adminrole",false);
+					float total=0;
 					ArrayList<Cart> cartlist = cartdao.allcart(customer);
+					 Iterator<Cart> cartIterator=cartlist.iterator();
+					 while(cartIterator.hasNext())
+					  {
+						  Cart cart = (Cart) cartIterator.next();
+						  total= total +(cart.getPro_Quantity()*cart.getPro_details().getPro_price());
+					  }
+					 session.setAttribute("total",total);
 					session.setAttribute("cartinfo", cartlist);
 					session.setAttribute("cartqty", cartlist.size());
 					if(session.getAttribute("pid")!=null)

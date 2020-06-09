@@ -30,6 +30,17 @@ td{
     max-width: 100px;
     
 }
+
+body {
+margin-top: 7%;
+}
+
+ .button,th{
+  background:linear-gradient(rgba(247, 16, 16, 0.712),rgb(12, 11, 11));
+  color: white;}
+  
+ .table{
+  border-bottom: 1px solid #ddd;}
 </style>
 
 <body>
@@ -131,7 +142,7 @@ td{
 					</div>
 
 					<div class="form-group">
-						<button class="btn btn-dark btn-block">SUBMIT</button>
+						<button class="btn btn-dark btn-block button">SUBMIT</button>
 
 					</div>
 				</form:form>
@@ -140,8 +151,8 @@ td{
 
 		<!-- --To fetch The Data -->
 		<div class="row" style="margin-bottom: 3%;">
-			<div class="table-responsive table-bordered movie-table">
-				<table class="table  movie-table">
+			<div class="table-responsive table-borderless movie-table">
+				<table class="table table-striped">
 					<thead class="dark-row">
 						<tr class="movie-table-head">
 							<th>Product Id</th>
@@ -167,19 +178,23 @@ td{
 								<td>${p.pro_Category.cat_Name}</td>
 								<td><img src="${cr}/pimg/${p.pro_id}.jpg" height="50px"></td>
 								<td class="text-center">
-									<div class="row">
-										<div class="col-6">
+									<div class="row" style="margin-top: 2%">
+										<div class="col-12">
+										
 											<a href="${cr}/admin/deleteproduct?proid=${p.pro_id}"
-												class="btn btn-info btn-xs"><span
+												class="btn btn-info"><span
 												class="glyphicon glyphicon-edit"></span>Delete</a>
-												
-										</div>
-										<div class="col-6">
+												</div>
+												</div>
+												<div class="row" style="margin-top: 2%">
+												<div class="col-12">
+										
 											<a href="${cr}/admin/getproducttoedit?proid=${p.pro_id}"
-												class="btn btn-danger btn-xs"><span
+												class="btn btn-danger"><span
 												class="glyphicon glyphicon-remove"></span>Edit</a>
 												</div>
-										</div>
+												</div>
+										
 									
 								</td>
 							</tr>

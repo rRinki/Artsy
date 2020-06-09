@@ -135,6 +135,15 @@ public class CartController {
 	{
 		if(session.getAttribute("cartinfo")==null) {
 		Customer cust = (Customer) session.getAttribute("custdetails");
+		float total=0;
+		ArrayList<Cart> cartlist = cartdao.allcart(cust);
+		 Iterator<Cart> cartIterator=cartlist.iterator();
+		 while(cartIterator.hasNext())
+		  {
+			  Cart cart = (Cart) cartIterator.next();
+			  total= total +(cart.getPro_Quantity()*cart.getPro_details().getPro_price());
+		  }
+		 session.setAttribute("total",total);
 		session.setAttribute("cartinfo", cartdao.allcart(cust));
 		session.setAttribute("cartqty", cartdao.allcart(cust).size());
 		}
@@ -148,12 +157,12 @@ public class CartController {
 	{
 		System.out.println(cartid);
 		Customer cust=(Customer)session.getAttribute("custdetails");
+		ArrayList<Cart> cartlist= cartdao.allcart(cust);
 		cartdao.deleteCart(cartdao.oneCart(cartid));
 		session.setAttribute("cartinfo", cartdao.allcart(cust));
 		model.addAttribute("cartpage", true);
-	    return "index";
 		
-	
+		 return "index";
 	}
 	
 }

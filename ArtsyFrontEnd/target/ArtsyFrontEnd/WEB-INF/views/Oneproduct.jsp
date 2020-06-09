@@ -83,11 +83,17 @@ keyframes fa-beat { 0% {
 transform
 
 
+
+
 :scale
+
+
 
 
 (1
 .25
+
+
 
 
 );
@@ -97,7 +103,11 @@ transform
 transform
 
 
+
+
 :scale(1)
+
+
 
 
 ;
@@ -107,7 +117,11 @@ transform
 transform
 
 
+
+
 :scale(1)
+
+
 
 
 ;
@@ -117,11 +131,17 @@ transform
 transform
 
 
+
+
 :scale
+
+
 
 
 (1
 .25
+
+
 
 
 );
@@ -131,7 +151,11 @@ transform
 transform
 
 
+
+
 :scale(1)
+
+
 
 
 ;
@@ -141,11 +165,17 @@ transform
 transform
 
 
+
+
 :scale
+
+
 
 
 (1
 .25
+
+
 
 
 );
@@ -155,7 +185,11 @@ transform
 transform
 
 
+
+
 :scale(1)
+
+
 
 
 ;
@@ -207,14 +241,14 @@ transform
 									<div class="form-group">
 										<input type="number" class="form-control" id="quantity"
 											name="quantity" value="1"> <input type="hidden"
-											value="${product.pro_id}" id="productid"
-											name="productid">
+											value="${product.pro_id}" id="productid" name="productid">
 									</div>
 								</div>
 								<div class="col-4">
 									<button type="submit" class="btn btn-lg color-box-waanbii">
-						<i class="fa fa-shopping-cart"></i> Add to Cart</button>
-			
+										<i class="fa fa-shopping-cart"></i> Add to Cart
+									</button>
+
 								</div>
 							</div>
 						</form>

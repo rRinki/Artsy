@@ -31,7 +31,7 @@ public class CategoryController {
 		model.addAttribute("categorypage", true);
 		model.addAttribute("categorylist",categorydao.allCategory());
 		model.addAttribute("categoryobject", new Category());
-		model.addAttribute("title", "category");
+		model.addAttribute("title", "Artsy--Category");
 		model.addAttribute("edit", false);
 		model.addAttribute("success", false);
 		model.addAttribute("message", "");
@@ -117,7 +117,7 @@ public class CategoryController {
 		model.addAttribute("categorypage", true);
 		model.addAttribute("categorylist",categorydao.allCategory());
 		model.addAttribute("categoryobject", new Category());
-		model.addAttribute("title", "category");
+		model.addAttribute("title", "Artsy--Category");
 		return "index";
 	}
 	@RequestMapping("/getdatatoedit")
@@ -127,7 +127,7 @@ public class CategoryController {
 		model.addAttribute("categorypage", true);
 		model.addAttribute("categorylist",categorydao.allCategory());
 		model.addAttribute("categoryobject", categorydao.oneCategory(catname));
-		model.addAttribute("title", "category");
+		model.addAttribute("title", "Artsy--Category");
 		model.addAttribute("success", true);
 		model.addAttribute("message", "Please Edit the Data that you want to change");
 		return "index";

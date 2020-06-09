@@ -106,7 +106,7 @@ style>.table>tbody>tr>td, .table>tfoot>tr>td {
 									 <div class="input-group">
                                    
                                     <button type="submit" class=" btn btn-primary"><i class="fa fa-minus"></i>
-                                        </a></button>
+                                        </button>
                                    
               						 
 									<input type="number" class="form-control" id="quantity"

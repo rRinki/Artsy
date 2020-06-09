@@ -198,13 +198,13 @@ public class ProductController {
 					model.addAttribute("error1", false);
 					model.addAttribute("success", true);
 					model.addAttribute("error2", false);
-					model.addAttribute("message", "CategoryAdded");
+					model.addAttribute("message", "Product Updated Successfully!!");
 					System.out.println("Done");
 
 				} else {
 
 					model.addAttribute("error2", true);
-					model.addAttribute("message", "checkData");
+					model.addAttribute("message", "Changes that you are trying to make have already been updated!!");
 					System.out.println("Failure");
 					model.addAttribute("productobject", product);
 					model.addAttribute("edit", true);
@@ -215,7 +215,7 @@ public class ProductController {
 			model.addAttribute("error1", false);
 			model.addAttribute("error2", true);
 			model.addAttribute("success", false);
-			model.addAttribute("message", "checkData");
+			model.addAttribute("message", "Changes that you are trying to make have already been updated!!");
 			System.out.println("Failure");
 			model.addAttribute("productobject", product);
 

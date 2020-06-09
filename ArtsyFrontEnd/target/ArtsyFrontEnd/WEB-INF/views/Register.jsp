@@ -96,7 +96,7 @@
         
         <h6 class="text-center">By clicking the Sign Up button,you agree to our Terms & Conditions and Privacy Policy</h6>
         <div class="form-group col-md-12">
-            <input type="submit" class="btn btn-info form-control" value="SIGN UP"></div>
+            <input type="submit" class="btn btn-success form-control" value="SIGN UP"></div>
            <div class="form-group col-md-12">
             <input type="submit" class="btn btn-danger form-control" value="CANCEL"></div>
            

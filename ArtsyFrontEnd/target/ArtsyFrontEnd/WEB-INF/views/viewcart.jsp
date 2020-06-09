@@ -88,7 +88,8 @@ style>.table>tbody>tr>td, .table>tfoot>tr>td {
 								<div class="col-8">
 									<h8 class="nomargin" style="padding-top:2px;">${p.pro_details.pro_name}</h8>
 									<div>
-										<a class="btn btn-danger"><i class="fa fa-trash"></i>Remove</a>
+										<a href="${cr}/user/deleteitem?cartid=${p.cart_id}" 
+										class="btn btn-danger"><i class="fa fa-trash"></i> Remove</a>
 									</div>
 									<c:if test="${error && pid==p.pro_details.pro_id}">
 										<div style= "margin-top:2%" class="alert alert-warning">
@@ -104,8 +105,8 @@ style>.table>tbody>tr>td, .table>tfoot>tr>td {
 								<form action="${cr}/addtocart" method="post">
 									 <div class="input-group">
                                    
-                                    <a href="" class=" btn btn-primary"><i class="fa fa-minus"></i>
-                                        </a>
+                                    <button type="submit" class=" btn btn-primary"><i class="fa fa-minus"></i>
+                                        </button>
                                    
               						 
 									<input type="number" class="form-control" id="quantity"

@@ -39,6 +39,7 @@ public class AddressController {
 		Customer cust = (Customer) session.getAttribute("custdetails");
 		Address address = new Address();
 		address.setCustomer(cust);
+		address.setAddress_Id(Integer.parseInt(addressmodel.get("addressid")));
 		address.setLine1(addressmodel.get("line1"));
 		address.setLine2(addressmodel.get("line2"));
 		address.setArea(addressmodel.get("area"));
